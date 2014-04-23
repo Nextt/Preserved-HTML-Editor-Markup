@@ -7,7 +7,7 @@ Description: A Wordpress Plugin that preserves HTML markup in the TinyMCE editor
 html and visual tabs.  Also adds support for HTML5 Block Anchors.
 Author: Marcus E. Pope, marcuspope
 Author URI: http://www.marcuspope.com
-Version: 1.5
+Version: 1.5.1
 
 Copyright 2011 Marcus E. Pope (email : me@marcuspope.com)
 
@@ -118,7 +118,7 @@ class MP_WP_Preserved_Markup {
            http://dev.w3.org/html5/markup/common-models.html#common.elem.phrasing
            http://www.tinymce.com/wiki.php/Configuration:valid_children
         */
-        $init['valid_children'] = "+a[em|strong|small|mark|abbr|dfn|i|b|s|u|code|var|samp|kbd|sup|sub|q|cite|span|bdo|bdi|br|wbr|ins|del|img|embed|object|iframe|map|area|script|noscript|ruby|video|audio|input|textarea|select|button|label|output|datalist|keygen|progress|command|canvas|time|meter|p|hr|pre|ul|ol|dl|div|h1|h2|h3|h4|h5|h6|hgroup|address|blockquote|section|nav|article|aside|header|footer|figure|table|f|m|fieldset|menu|details]";
+        $init['valid_children'] = "+a[em|strong|small|mark|abbr|dfn|i|b|s|u|code|var|samp|kbd|sup|sub|q|cite|span|bdo|bdi|br|wbr|ins|del|img|embed|object|iframe|map|area|noscript|ruby|video|audio|input|textarea|select|button|label|output|datalist|keygen|progress|command|canvas|time|meter|p|hr|pre|ul|ol|dl|div|h1|h2|h3|h4|h5|h6|hgroup|address|blockquote|section|nav|article|aside|header|footer|figure|table|f|m|fieldset|menu|details|style|link],+body[style|link]";
 
         return $init;
     }
