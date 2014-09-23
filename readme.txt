@@ -4,7 +4,7 @@ Donate link: http://www.marcuspope.com/wordpress
 Tags: wpautop, editor, markup, html, white space, HTML5, WYSIWYG, visual, developer
 Requires at least: 3.2.1
 Tested up to: 3.4
-Stable tag: trunk
+Stable tag: 1.5.1
 License: GPLv2 or later
 
 
