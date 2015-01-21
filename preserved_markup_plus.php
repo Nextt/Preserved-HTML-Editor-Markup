@@ -179,8 +179,8 @@ class MP_WP_Preserved_Markup {
             //the html mode.  FIXME: assuming four spaces is bad mmkay, what if I like only two spaces for a tab?
             //and this could produce bad markup if a user had <p    class="test">hello</p> in their markup.  So
             //work on a more flexible /\s/g approach when \s is inside or outside a tag definition
-            $c = preg_replace("/(\r\n|\n)/", "<!--mep-nl-->", $c); //preserve new lines
-            $c = preg_replace("/(\t|\s\s\s\s)/", "<!--mep-tab-->", $c); //preserve indents
+            $c = preg_replace("/(\r?\n)/", "\n<!--mep-nl-->", $c); //preserve new lines
+            $c = preg_replace("/(\t|\s\s\s\s)/", " <!--mep-tab-->", $c); //preserve indents
 
             //Now we can restore all whitespace originally escaped in pre & code tags
             $c = preg_replace("/<mep-preserve-nl>/m", "\n", $c);
@@ -207,8 +207,8 @@ class MP_WP_Preserved_Markup {
         //issue was caused by a js error in that function that resulted in nothing being stripped out before it was
         //posted to the server here:
         if (isset($post['post_content'])) {
-            $post['post_content'] = preg_replace('/<\!--mep-nl-->/m', "\r\n", $post['post_content']);
-            $post['post_content'] = preg_replace('/<\!--mep-tab-->/m', "    ", $post['post_content']);
+            $post['post_content'] = preg_replace('/(\r?\n|\s)?<\!--mep-nl-->/m', "\r\n", $post['post_content']);
+            $post['post_content'] = preg_replace('/\s?<\!--mep-tab-->/m', "    ", $post['post_content']);
             $post['post_content'] = preg_replace_callback(
                 '/<code style=[\'"]display: none;[\'"]><!--[\s\S]*?--><\/code>/m',
                 array(
