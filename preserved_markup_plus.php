@@ -7,7 +7,7 @@ Description: A Wordpress Plugin that preserves HTML markup in the TinyMCE editor
 html and visual tabs.  Also adds support for HTML5 Block Anchors.
 Author: Marcus E. Pope, marcuspope, Jason Rosenbaum, J-Ro
 Author URI: http://www.marcuspope.com
-Version: 1.5.1
+Version: 1.5.2
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -110,6 +110,12 @@ class MP_WP_Preserved_Markup {
         $init['verify_html'] = false;
         $init['setup'] = 'emc2_tinymce_init';
         $init['allow_script_urls'] = true;
+		$init['cleanup_on_startup'] = false;
+		$init['cleanup'] = false;
+		$init['validate_children'] = false;
+		$init['remove_redundant_brs'] = false;
+	
+		$init['entities'] = '160,nbsp';	
 
         /*
            Allow for html5 anchor tags
@@ -305,7 +311,7 @@ class MP_WP_Preserved_Markup {
         $plugin_data = get_plugin_data(__FILE__);
         $cachebuster = $plugin_data['Version'];
         
-        wp_enqueue_script('emc2-pm-admin-js', WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__))."admin.js?v=".$cachebuster);
+        wp_enqueue_script('emc2-pm-admin-js', plugins_url("admin.js?v=".$cachebuster, __FILE__));
         //wp_enqueue_script('emc2-pm-admin-js', WP_PLUGIN_URL.'/sb_preserved_markup/admin.js');
         
         //provide nonce for ajax calls
