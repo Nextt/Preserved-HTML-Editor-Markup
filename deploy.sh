@@ -24,8 +24,11 @@ echo
 echo ".........................................."
 echo 
 
+echo $CURRENTDIR
+echo $GITPATH
+
 # Check version in readme.txt is the same as plugin file after translating both to unix line breaks to work around grep's failure to identify mac line breaks
-NEWVERSION1=`grep "^Stable tag:" $GITPATH/readme.txt | awk -F' ' '{print $NF}'`
+NEWVERSION1=`grep "^Stable tag:" $GITPATH/readme.txt -print0 | awk -F' ' '{print $NF}'`
 echo "readme.txt version: $NEWVERSION1"
 NEWVERSION2=`grep "^Version:" $GITPATH/$MAINFILE | awk -F' ' '{print $NF}'`
 echo "$MAINFILE version: $NEWVERSION2"
