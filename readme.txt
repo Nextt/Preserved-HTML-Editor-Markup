@@ -3,7 +3,7 @@ Contributors: marcuspope, j-ro
 Donate link: http://www.marcuspope.com/wordpress
 Tags: wpautop, editor, markup, html, white space, HTML5, WYSIWYG, visual, developer
 Requires at least: 3.2.1
-Tested up to: 4.4
+Tested up to: 4.5
 Stable tag: 1.5.3
 License: GPLv2 or later
 
