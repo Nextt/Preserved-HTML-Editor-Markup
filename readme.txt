@@ -8,7 +8,7 @@ Stable tag: 1.5.3
 License: GPLv2 or later
 
 
-Preserves white space and developer edits in HTML AND WYSIWYG tab.  Supports inline scripts/css, JavaScript code blocks and HTML5 content editing
+Preserves HTML and developer edits in HTML AND WYSIWYG tab.  Supports inline scripts/css, JavaScript code blocks and HTML5 content editing
 
 
 == Description ==
